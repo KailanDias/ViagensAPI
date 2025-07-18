@@ -10,6 +10,7 @@ public class Rotas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rotas")
     private int idRota;
 
     @Column(name = "ponto_partida", nullable = false)
@@ -17,7 +18,5 @@ public class Rotas {
 
     @Column(name = "cidade_destino", nullable = false)
     private String cidadeDestino;
-
-
 
 }

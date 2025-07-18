@@ -33,4 +33,7 @@ public class Usuario {
     @Column(name = "data_criacao")
     private Date dataCadastro;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private Taxistas taxistas;
+
 }
