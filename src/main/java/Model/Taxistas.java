@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Taxista")
+@Table(name = "Taxistas")
 public class Taxistas {
 
     @Id
@@ -15,5 +15,8 @@ public class Taxistas {
     @OneToOne
     @JoinColumn(name = "id_taxistas", nullable = false)
     private Usuario usuario;
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "taxistas")
+    private Carros carros;
 
 }
