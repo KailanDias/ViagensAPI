@@ -3,6 +3,9 @@ package Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "rotas")
@@ -19,4 +22,6 @@ public class Rotas {
     @Column(name = "cidade_destino", nullable = false)
     private String cidadeDestino;
 
+    @OneToMany(mappedBy = "rotas", cascade = CascadeType.ALL,  orphanRemoval = true)
+    List<Viagens> viagens = new ArrayList<>();
 }

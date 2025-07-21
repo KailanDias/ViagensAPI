@@ -36,4 +36,5 @@ public class Usuario {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
     private Taxistas taxistas;
 
+
 }
