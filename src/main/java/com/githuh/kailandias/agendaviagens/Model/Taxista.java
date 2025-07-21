@@ -1,6 +1,5 @@
-package Model;
+package com.githuh.kailandias.agendaviagens.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -8,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Taxistas")
-public class Taxistas {
+public class Taxista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +18,7 @@ public class Taxistas {
     @JoinColumn(name = "id_taxistas", referencedColumnName = "id_usuarios", nullable = false)
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "taxistas",  cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Viagens> viagens = new ArrayList<>();
+    @OneToMany(mappedBy = "taxista",  cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Viagen> viagens = new ArrayList<>();
 
 }

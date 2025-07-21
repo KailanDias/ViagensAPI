@@ -1,4 +1,4 @@
-package Model;
+package com.githuh.kailandias.agendaviagens.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -7,17 +7,16 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
-import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "viagens")
-public class Viagens {
+public class Viagen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_viagens")
-    private Long id;
+    private Long idViagens;
 
     @Column(name = "data_viagem", nullable = false)
     private LocalDate dataViagem;
@@ -38,12 +37,12 @@ public class Viagens {
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(name = "taxista_id", nullable = false)
-    private Taxistas taxista;
+    @JoinColumn(name = "id_taxista", nullable = false)
+    private Taxista taxista;
 
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "rota_id", nullable = false)
-    private Rotas rota;
+    private Rota rota;
 
 }

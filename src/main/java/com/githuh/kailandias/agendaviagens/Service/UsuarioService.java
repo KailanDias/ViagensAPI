@@ -1,7 +1,7 @@
-package Service;
+package com.githuh.kailandias.agendaviagens.Service;
 
-import Model.Usuario;
-import Repository.UsuarioRepository;
+import com.githuh.kailandias.agendaviagens.Model.Usuario;
+import com.githuh.kailandias.agendaviagens.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

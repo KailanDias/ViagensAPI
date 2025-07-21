@@ -1,4 +1,4 @@
-package Model;
+package com.githuh.kailandias.agendaviagens.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,12 +9,12 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "rotas")
-public class Rotas {
+public class Rota {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_rotas")
-    private int idRota;
+    private Long idRota;
 
     @Column(name = "ponto_partida", nullable = false)
     private String pontoPartida;
@@ -23,5 +23,5 @@ public class Rotas {
     private String cidadeDestino;
 
     @OneToMany(mappedBy = "rota", cascade = CascadeType.ALL,  orphanRemoval = true)
-    List<Viagens> viagens = new ArrayList<>();
+    List<Viagen> viagens = new ArrayList<>();
 }
