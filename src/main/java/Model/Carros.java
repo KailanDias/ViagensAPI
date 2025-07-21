@@ -19,7 +19,7 @@ public class Carros {
     @Column(name = "marca", nullable = false)
     private String marca;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "cor", nullable = false)
     private String cor;
 
     @Column(name = "placa", nullable = false)
@@ -28,7 +28,7 @@ public class Carros {
     @Column(name = "ano", nullable = false, updatable = true)
     private Integer ano;
 
-    @Column(name = "vags_totais",  nullable = false)
+    @Column(name = "vagas_totais",  nullable = false)
     private Integer vagasTotais;
 
     @OneToOne
