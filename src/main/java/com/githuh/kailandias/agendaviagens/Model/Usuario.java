@@ -1,10 +1,9 @@
-package Model;
+package com.githuh.kailandias.agendaviagens.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Data
@@ -35,7 +34,7 @@ public class Usuario {
     private LocalDateTime dataCadastro;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private Taxistas taxistas;
+    private Taxista taxista;
 
 
 }

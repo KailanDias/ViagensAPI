@@ -1,4 +1,4 @@
-package Model;
+package com.githuh.kailandias.agendaviagens.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Entity
 @Table(name = "Carros")
 @Data
-public class Carros {
+public class Carro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Carros {
     private Integer vagasTotais;
 
     @OneToOne
-    @JoinColumn(name = "id_taxista", nullable = false)
-    private Taxistas taxistas;
+    @JoinColumn(name = "id_taxistas", nullable = false)
+    private Taxista taxista;
 
 }
