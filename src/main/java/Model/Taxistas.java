@@ -3,6 +3,9 @@ package Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Taxistas")
 public class Taxistas {
@@ -16,7 +19,10 @@ public class Taxistas {
     @JoinColumn(name = "id_taxistas", nullable = false)
     private Usuario usuario;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "taxistas")
-    private Carros carros;
+
+    @OneToMany(mappedBy = "Taxistas",  cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Viagens> viagens = new ArrayList<>();
+
+
 
 }
