@@ -16,13 +16,10 @@ public class Taxistas {
     private Long idTaxista;
 
     @OneToOne
-    @JoinColumn(name = "id_taxistas", nullable = false)
+    @JoinColumn(name = "id_taxistas", referencedColumnName = "id_usuarios", nullable = false)
     private Usuario usuario;
 
-
-    @OneToMany(mappedBy = "Taxistas",  cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "taxistas",  cascade = CascadeType.ALL, orphanRemoval = true)
     List<Viagens> viagens = new ArrayList<>();
-
-
 
 }

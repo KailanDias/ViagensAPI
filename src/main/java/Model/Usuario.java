@@ -3,6 +3,7 @@ package Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -31,7 +32,7 @@ public class Usuario {
     private String senha;
 
     @Column(name = "data_criacao")
-    private Date dataCadastro;
+    private LocalDateTime dataCadastro;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
     private Taxistas taxistas;

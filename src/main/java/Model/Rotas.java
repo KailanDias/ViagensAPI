@@ -22,6 +22,6 @@ public class Rotas {
     @Column(name = "cidade_destino", nullable = false)
     private String cidadeDestino;
 
-    @OneToMany(mappedBy = "rotas", cascade = CascadeType.ALL,  orphanRemoval = true)
+    @OneToMany(mappedBy = "rota", cascade = CascadeType.ALL,  orphanRemoval = true)
     List<Viagens> viagens = new ArrayList<>();
 }
