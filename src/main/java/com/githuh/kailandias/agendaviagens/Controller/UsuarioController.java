@@ -1,6 +1,8 @@
 package com.githuh.kailandias.agendaviagens.Controller;
 
 
+import com.githuh.kailandias.agendaviagens.Controller.dto.UsuarioDTO;
+import com.githuh.kailandias.agendaviagens.Controller.mapper.UsuarioMapper;
 import com.githuh.kailandias.agendaviagens.Model.Usuario;
 import com.githuh.kailandias.agendaviagens.Repository.UsuarioRepository;
 import com.githuh.kailandias.agendaviagens.Service.UsuarioService;
@@ -9,29 +11,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
     @Autowired
-    public UsuarioRepository repository;
+    public UsuarioService service;
+
+    @Autowired
+    public UsuarioMapper mapper;
+
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario){
-        return repository.save(usuario);
+    public UsuarioDTO salvar(@RequestBody Usuario usuario) {
+        Usuario usuarioSalvo = service.salvar(usuario);
+        return mapper.toDto(usuarioSalvo);
     }
 
     @DeleteMapping("{id}")
-    public Usuario deletar(@PathVariable Long id){
-        Usuario usuario = repository.findById(id).get();
-        repository.delete(usuario);
-        return usuario;
+    public UsuarioDTO deletar(@PathVariable Long id){
+        Usuario usuario = service.deletar(id);
+        return mapper.toDto(usuario);
     }
 
     @GetMapping
-    public List<Usuario> listar(){
-        return repository.findAll();
+    public List<UsuarioDTO> listar() {
+        return service.listarTodos().stream()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
     }
 
 

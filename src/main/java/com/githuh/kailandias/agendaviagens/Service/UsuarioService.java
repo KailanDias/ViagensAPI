@@ -17,7 +17,8 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario deletar(Usuario usuario){
+    public Usuario deletar(Long id){
+        Usuario usuario = usuarioRepository.findById(id).get();
         usuarioRepository.delete(usuario);
         return usuario;
     }
