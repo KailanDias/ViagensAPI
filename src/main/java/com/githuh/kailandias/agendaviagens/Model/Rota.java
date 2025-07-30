@@ -23,5 +23,5 @@ public class Rota {
     private String cidadeDestino;
 
     @OneToMany(mappedBy = "rota", cascade = CascadeType.ALL,  orphanRemoval = true)
-    List<Viagen> viagens = new ArrayList<>();
+    List<Viagem> viagens = new ArrayList<>();
 }

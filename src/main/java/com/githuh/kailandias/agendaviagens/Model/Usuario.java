@@ -37,4 +37,11 @@ public class Usuario {
     private Taxista taxista;
 
 
+    // Antes do usuario ser criado este metodo é chamado passando a data e hora atual
+    @PrePersist
+    public void prePersist() {
+        setDataCadastro(LocalDateTime.now());
+    }
+
+
 }
