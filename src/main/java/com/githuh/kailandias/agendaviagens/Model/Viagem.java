@@ -11,7 +11,7 @@ import java.time.OffsetDateTime;
 @Entity
 @Data
 @Table(name = "viagens")
-public class Viagen {
+public class Viagem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +37,7 @@ public class Viagen {
 
     @ManyToOne
     @JsonIgnore
+    // A linha abaixo foi corrigida
     @JoinColumn(name = "id_taxista", nullable = false)
     private Taxista taxista;
 

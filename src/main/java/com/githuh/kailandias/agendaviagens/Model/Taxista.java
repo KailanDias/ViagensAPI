@@ -11,14 +11,14 @@ public class Taxista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_taxistas")
+    @Column(name = "id_taxista")
     private Long idTaxista;
 
     @OneToOne
-    @JoinColumn(name = "id_taxistas", referencedColumnName = "id_usuarios", nullable = false)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuarios", nullable = false, unique = true)
     private Usuario usuario;
 
     @OneToMany(mappedBy = "taxista",  cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Viagen> viagens = new ArrayList<>();
+    List<Viagem> viagens = new ArrayList<>();
 
 }
