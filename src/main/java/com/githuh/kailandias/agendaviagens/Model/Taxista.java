@@ -1,12 +1,14 @@
 package com.githuh.kailandias.agendaviagens.Model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "Taxistas")
+@Data
 public class Taxista {
 
     @Id
