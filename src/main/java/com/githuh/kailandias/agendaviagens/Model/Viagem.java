@@ -10,12 +10,12 @@ import java.time.OffsetDateTime;
 
 @Entity
 @Data
-@Table(name = "viagens")
+@Table(name = "viagem")
 public class Viagem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_viagens")
+    @Column(name = "id_viagem")
     private Long idViagens;
 
     @Column(name = "data_viagem", nullable = false)
