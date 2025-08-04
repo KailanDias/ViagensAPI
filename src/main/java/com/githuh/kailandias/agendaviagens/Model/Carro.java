@@ -32,7 +32,7 @@ public class Carro {
     private Integer vagasTotais;
 
     @OneToOne
-    @JoinColumn(name = "id_taxistas", nullable = false)
+    @JoinColumn(name = "id_taxista", nullable = false)
     private Taxista taxista;
 
 }

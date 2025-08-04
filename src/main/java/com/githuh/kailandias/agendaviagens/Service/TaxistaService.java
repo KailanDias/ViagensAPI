@@ -3,6 +3,7 @@ package com.githuh.kailandias.agendaviagens.Service;
 import com.githuh.kailandias.agendaviagens.Model.Taxista;
 import com.githuh.kailandias.agendaviagens.Model.Usuario;
 import com.githuh.kailandias.agendaviagens.Repository.TaxistasRepository;
+import com.githuh.kailandias.agendaviagens.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,21 @@ public class TaxistaService {
 
     @Autowired
     public TaxistasRepository taxistasRepository;
+
+    public UsuarioRepository usuarioRepository;
+
+//    public Taxista salvar(Taxista taxista){
+//        // Busca a instância gerenciada do Usuario
+//        Long usuarioId = taxista.getUsuario().getIdUsuario();
+//        Usuario usuario = usuarioRepository.findById(usuarioId)
+//                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o id: " + usuarioId));
+//
+//        // Associa o usuário persistente ao taxista
+//        taxista.setUsuario(usuario);
+//
+//        return taxistasRepository.save(taxista);
+//    }
+
 
     public Taxista salvar(Taxista taxista){
         return taxistasRepository.save(taxista);
