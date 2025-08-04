@@ -17,7 +17,7 @@ public class Taxista {
     private Long idTaxista;
 
     @OneToOne
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuarios", nullable = false, unique = true)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuarios", unique = true)
     private Usuario usuario;
 
     @OneToMany(mappedBy = "taxista",  cascade = CascadeType.ALL, orphanRemoval = true)

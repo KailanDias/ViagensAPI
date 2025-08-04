@@ -12,6 +12,7 @@ public interface TaxistaMapper {
 
     TaxistaDTO toDto(Taxista taxista);
 
+    @Mapping(source = "idUsuario", target = "usuario")
     Taxista toEntity(TaxistaDTO dto);
 
     @Mapping(source = "idTaxista", target = "idTaxista")
