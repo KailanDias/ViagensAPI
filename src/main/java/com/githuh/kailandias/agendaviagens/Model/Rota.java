@@ -8,12 +8,12 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "rotas")
+@Table(name = "rota")
 public class Rota {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_rotas")
+    @Column(name = "id_rota")
     private Long idRota;
 
     @Column(name = "ponto_partida", nullable = false)

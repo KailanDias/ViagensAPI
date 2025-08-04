@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Taxistas")
+@Table(name = "Taxista")
 @Data
 public class Taxista {
 
@@ -17,7 +17,7 @@ public class Taxista {
     private Long idTaxista;
 
     @OneToOne
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuarios", unique = true)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id_usuario", unique = true)
     private Usuario usuario;
 
     @OneToMany(mappedBy = "taxista",  cascade = CascadeType.ALL, orphanRemoval = true)
