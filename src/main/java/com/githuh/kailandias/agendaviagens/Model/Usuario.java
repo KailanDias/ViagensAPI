@@ -18,13 +18,13 @@ public class Usuario {
     @Column(name = "nome",length = 255,nullable = false)
     private String nome;
 
-    @Column(name = "cpf", length = 14,nullable = false)
+    @Column(name = "cpf", length = 14,nullable = false,unique = true)
     private String cpf;
 
-    @Column(name = "telefone",  length = 20,nullable = false)
+    @Column(name = "telefone",  length = 20,nullable = false,unique = true)
     private String telefone;
 
-    @Column(name = "email", length = 255,nullable = false)
+    @Column(name = "email", length = 255,nullable = false, unique = true)
     private String email;
 
     @Column(name = "senha", length = 255,nullable = false)
