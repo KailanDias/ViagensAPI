@@ -37,7 +37,6 @@ public class Viagem {
 
     @ManyToOne
     @JsonIgnore
-    // A linha abaixo foi corrigida
     @JoinColumn(name = "id_taxista", nullable = false)
     private Taxista taxista;
 
