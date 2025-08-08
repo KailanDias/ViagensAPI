@@ -1,8 +1,11 @@
 package com.githuh.kailandias.agendaviagens.Service;
 
+import com.githuh.kailandias.agendaviagens.Model.Rota;
 import com.githuh.kailandias.agendaviagens.Repository.RotasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RotaService {
@@ -10,7 +13,17 @@ public class RotaService {
     @Autowired
     private RotasRepository repository;
 
+    public Rota salvar(Rota rota){
+        return repository.save(rota);
+    }
 
+    public List<Rota>  listar(){
+        return repository.findAll();
+    }
+
+    public void deletar(Rota rota){
+        repository.delete(rota);
+    }
 
 
 }

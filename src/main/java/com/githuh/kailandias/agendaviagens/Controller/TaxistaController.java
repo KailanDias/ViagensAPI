@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/taxistas")
 public class TaxistaController {
 
-    @Autowired
-    public TaxistasRepository taxistasRepository;
 
     @Autowired
     public TaxistaService service;
@@ -35,14 +33,16 @@ public class TaxistaController {
     }
 
     @DeleteMapping("{id}" )
-    public void deletar(Taxista id){
-        this.taxistasRepository.delete(id);
+    public TaxistaDTO deletar(@PathVariable Long id){
+        Taxista taxista = service.deletar(id);
+        return mapper.toDto(taxista);
     }
 
+
     @GetMapping
-    public List<TaxistaResponseDTO> listar() {
-        return taxistasRepository.findAll().stream()
-                .map(mapper::toResponseDto)
+    public List<TaxistaDTO> listar() {
+        return service.listarTodos().stream()
+                .map(mapper::toDto)
                 .collect(Collectors.toList());
     }
 
