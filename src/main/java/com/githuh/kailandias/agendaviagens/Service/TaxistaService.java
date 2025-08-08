@@ -38,8 +38,9 @@ public class TaxistaService {
 //        return taxistasRepository.save(taxista);
 //    }
 
-    public Taxista deletar(Taxista taxista){
-        taxistasRepository.delete(taxista);
+    public Taxista deletar(Long id){
+        Taxista taxista = taxistasRepository.findById(id).get();
+        taxistasRepository.delete( taxista);
         return taxista;
     }
 
