@@ -26,24 +26,22 @@ public class TaxistaController {
     public TaxistaMapper mapper;
 
     @PostMapping
-    public TaxistaResponseDTO salvar(@RequestBody TaxistaDTO dto){
+    public TaxistaResponseDTO salvar(@RequestBody TaxistaDTO dto) {
         Taxista taxista = mapper.toEntity(dto);
         Taxista salvo = service.salvar(taxista);
         return mapper.toResponseDto(salvo);
     }
 
-    @DeleteMapping("{id}" )
-    public TaxistaDTO deletar(@PathVariable Long id){
+    @DeleteMapping("{id}")
+    public TaxistaDTO deletar(@PathVariable Long id) {
         Taxista taxista = service.deletar(id);
         return mapper.toDto(taxista);
     }
 
-
     @GetMapping
-    public List<TaxistaDTO> listar() {
+    public List<TaxistaResponseDTO> listar() {
         return service.listarTodos().stream()
-                .map(mapper::toDto)
+                .map(mapper::toResponseDto)
                 .collect(Collectors.toList());
     }
-
 }

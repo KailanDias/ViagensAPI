@@ -20,7 +20,7 @@ public class Rota {
     private String pontoPartida;
 
     @Column(name = "cidade_destino", nullable = false)
-    private String cidadeDestino;
+        private String cidadeDestino;
 
     @OneToMany(mappedBy = "rota", cascade = CascadeType.ALL,  orphanRemoval = true)
     List<Viagem> viagens = new ArrayList<>();

@@ -1,5 +1,6 @@
 package com.githuh.kailandias.agendaviagens.Service;
 
+import com.githuh.kailandias.agendaviagens.Controller.dto.RotaDTO;
 import com.githuh.kailandias.agendaviagens.Model.Rota;
 import com.githuh.kailandias.agendaviagens.Repository.RotasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,15 @@ public class RotaService {
         return repository.findAll();
     }
 
-    public void deletar(Rota rota){
+    public Rota deletar(Long id){
+        Rota rota = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Rota inexistente"));
         repository.delete(rota);
+        return rota;
+    }
+
+    public List<Rota> listarTodos(){
+        return repository.findAll();
     }
 
 
