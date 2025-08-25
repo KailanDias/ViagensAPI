@@ -1,5 +1,6 @@
 package com.githuh.kailandias.agendaviagens.Controller.mapper;
 
+import com.githuh.kailandias.agendaviagens.Controller.dto.ViagemRequestDTO;
 import com.githuh.kailandias.agendaviagens.Controller.dto.ViagemResponseDTO;
 import com.githuh.kailandias.agendaviagens.Model.Viagem;
 import org.mapstruct.Mapper;
@@ -11,5 +12,7 @@ public interface ViagemMapper {
     @Mapping(source = "taxista", target = "taxista")
     @Mapping(source = "rota", target = "rota")
     ViagemResponseDTO toResponseDto(Viagem viagem);
+
+    Viagem toEntity(ViagemRequestDTO dto);
 
 }
